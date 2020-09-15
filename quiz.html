@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>code runner</title>
+    <link rel="icon" href="code runner logo.png" type="image/x-icon">
+    <style>
+        :root{
+          --col1: #2AC3FF;
+          --col2: #2AC3FF;
+          --col3: #2AC3FF;
+          --col4: #2AC3FF;
+        }
+      .button{
+        cursor: pointer;
+      }
+      *{
+          outline: none;
+      }
+      #lev4{
+      background-color: var(--col4);
+      color: white;
+      width: 500px;
+      height: 50px;
+      margin: 10px;
+      border: solid 2px #2AC3FF;
+      border-radius: 50px;
+      font-family: Arial;
+      font-size: 20px;
+    }
+    #lev3{
+      background-color: var(--col3);
+      color: white;
+      width: 500px;
+      height: 50px;
+      margin: 10px;
+      border: solid 2px #2AC3FF;
+      border-radius: 50px;
+      font-family: Arial;
+      font-size: 20px;
+    }
+    #lev2{
+      background-color: var(--col2);
+      color: white;
+      width: 500px;
+      height: 50px;
+      margin: 10px;
+      border: solid 2px #2AC3FF;
+      border-radius: 50px;
+      font-family: Arial;
+      font-size: 20px;
+    }
+    #lev1{
+      background-color: var(--col1);
+      color: white;
+      width: 500px;
+      height: 50px;
+      margin: 10px;
+      border: solid 2px #2AC3FF;
+      border-radius: 50px;
+      font-family: Arial;
+      font-size: 20px;
+    }
+    #lev1:hover, #lev2:hover ,#lev3:hover ,#lev4:hover{
+      background-color: white;
+      cursor: pointer;
+      color: #2AC3FF;
+      border: solid 2px white;
+      border-radius: 50px;
+    }
+    #mainpic{
+      padding: 150px;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background: grey; 
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: darkgray; 
+    }
+    body{
+      margin: 0;
+      background-color: white;
+      text-align: center;
+    }
+    #nvpic{
+      width: 130px;
+      height: 70px;
+      margin: 0;
+      padding: 10px;
+    }
+    ul{
+      list-style-type: none;
+      height: 90px; 
+      box-shadow: 2px 2px 50px black;
+      width: 98%;
+      position: fixed;
+      background-color: white;
+      top: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+    .nvbar{
+      background-color: #2AC3FF;
+      color: white;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      top: 0;
+      margin: 15px;
+    }
+    .nvbar:hover{
+      background-color: white;
+      color: #2AC3FF;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .card1{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 100px;
+      border-radius: 10px;
+      height: 900px;
+      text-align: center;
+      color: white;
+      background-color: #2AC3FF;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card1button{
+      background-color: white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card1button:hover{
+      background-color:#2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 280px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card2button{
+      background-color: #2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card2button:hover{
+      background-color:white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2_code{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 400px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    </style>
+  </head>
+  <body>
+    <script>
+        function level1(){
+          var question = new Array();
+          question[0] = "10 + 10";
+          question[1] = "40 * 3";
+          question[2] = "5 - 40";
+          var answer = new Array();
+          answer[0] = "20";
+          answer[1] = "120";
+          answer[2] = "-35";
+          do{
+            alert('welcome to our game, you will have to answer 3 questions to win!');
+            var count = 0;
+            var points = 0;
+            for(count; count <= 2; count++){
+              var ans = prompt(question[count]);
+              if(ans == answer[count]){
+                alert('you are right!');
+                points += 1;
+              }
+              else{
+                alert('you lose');
+                count = 2;
+                alert('!!GAME OVER!!');
+                document.documentElement.style.setProperty('--col1', 'red');
+              }
+            }
+            if(points == 3){
+              alert('you win !!!'); 
+              document.documentElement.style.setProperty('--col1', 'green');
+            }
+          }while(confirm('do you want to play again ?'))
+        }
+        function level2(){
+          var question = new Array();
+          question[0] = "120 + 53";
+          question[1] = "35 * 5";
+          question[2] = "12345 - 2305";
+          var answer = new Array();
+          answer[0] = "173";
+          answer[1] = "175";
+          answer[2] = "10040";
+          do{
+            alert('welcome to our game, you will have to answer 3 questions to win!');
+            var count = 0;
+            var points = 0;
+            for(count; count <= 2; count++){
+              var ans = prompt(question[count]);
+              if(ans == answer[count]){
+                alert('you are right!');
+                points += 1;
+              }
+              else{
+                alert('you lose');
+                count = 2;
+                alert('!!GAME OVER!!');
+                document.documentElement.style.setProperty('--col2', 'red');
+              }
+            }
+            if(points == 3){
+              alert('you win !!!'); 
+              document.documentElement.style.setProperty('--col2', 'green');
+            }
+          }while(confirm('do you want to play again ?'))
+        }
+        function level3(){
+          var question = new Array();
+          question[0] = "12345 + 54321";
+          question[1] = "23 * 5";
+          question[2] = "675 - 345";
+          var answer = new Array();
+          answer[0] = eval(12345 + 54321);
+          answer[1] = eval(23 * 5);
+          answer[2] = eval(675 - 345);
+          do{
+            alert('welcome to our game, you will have to answer 3 questions to win!');
+            var count = 0;
+            var points = 0;
+            for(count; count <= 2; count++){
+              var ans = prompt(question[count]);
+              if(ans == answer[count]){
+                alert('you are right!');
+                points += 1;
+              }
+              else{
+                alert('you lose');
+                count = 2;
+                alert('!!GAME OVER!!');
+                document.documentElement.style.setProperty('--col3', 'red');
+              }
+            }
+            if(points == 3){
+              alert('you win !!!'); 
+              document.documentElement.style.setProperty('--col3', 'green');
+            }
+          }while(confirm('do you want to play again ?'))
+        }
+        function level4(){
+          var question = new Array();
+          question[0] = "453 + 5756 + 895";
+          question[1] = "4 * 3 * 64864 * 547547 * 575557 * 435436 * 0 * 67 * 56467";
+          question[2] = "3523 - 3523";
+          var answer = new Array();
+          answer[0] = eval(453 + 5756 + 895);
+          answer[1] = "0";
+          answer[2] = "0";
+          do{
+            alert('welcome to our game, you will have to answer 3 questions to win!');
+            var count = 0;
+            var points = 0;
+            for(count; count <= 2; count++){
+              var ans = prompt(question[count]);
+              if(ans == answer[count]){
+                alert('you are right!');
+                points += 1;
+              }
+              else{
+                alert('you lose');
+                count = 2;
+                alert('!!GAME OVER!!');
+                document.documentElement.style.setProperty('--col4', 'red');
+              }
+            }
+            if(points == 3){
+              alert('you win !!!'); 
+              document.documentElement.style.setProperty('--col4', 'green');
+            }
+          }while(confirm('do you want to play again ?'))
+        }
+    </script>
+    <header>
+      <ul>
+        <li style="float: left;" ><img src="CODERUNNER.png" id='nvpic'></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="home" onclick="location.href='index.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="code" onclick="location.href='codes.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="go back" onclick="location.href='projects.html'"></li>
+      </ul>
+    </header>
+    <div class="card1">
+      <div class="card2">
+          <H1>MATH QUIZ</H1>
+          <button onclick = 'level1()' id = 'lev1'>PLAY LEVEL 1</button>
+          <br>
+          <button onclick = 'level2()' id = 'lev2'>PLAY LEVEL 2</button>
+          <button onclick = 'level3()' id = 'lev3'>PLAY LEVEL 3</button>
+          <br>
+          <button onclick = 'level4()' id = 'lev4'>PLAY LEVEL 4</button>
+      </div>
+      <div class="card2_code">
+        <h1 class="center">THE CODE</h1>
+              <iframe height="265" style="width: 100%;" scrolling="no" title="PROMPT QUIZ" src="https://codepen.io/gsoham562/embed/LYGjPZo?height=265&theme-id=dark&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+              See the Pen <a href='https://codepen.io/gsoham562/pen/LYGjPZo'>PROMPT QUIZ</a> by SOHAM GUPTA
+              (<a href='https://codepen.io/gsoham562'>@gsoham562</a>) on <a href='https://codepen.io'>CodePen</a>.
+      </div>
+    </div>
+  </body>
+</html>

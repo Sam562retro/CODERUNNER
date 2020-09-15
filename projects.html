@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CODE RUNNER</title>
+    <link rel="icon" href="CODERUNNER.png" type="image/x-icon">
+    <style>
+    #mainpic{
+      padding: 150px;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background: grey; 
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: darkgray; 
+    }
+    body{
+      margin: 0;
+      background-color: white;
+      text-align: center;
+    }
+    #nvpic{
+      width: 130px;
+      height: 70px;
+      margin: 0;
+      padding: 10px;
+      display: none;
+    }
+    *{
+        outline:none;
+    }
+    ul{
+      list-style-type: none;
+      height: 90px; 
+      width: 98%;
+      position: fixed;
+      background-color: white;
+      top: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+    .nvbar{
+      background-color: #2AC3FF;
+      color: white;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      top: 0;
+      margin: 15px;
+    }
+    .nvbar:hover{
+      background-color: white;
+      color: #2AC3FF;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .card1{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 270px;
+      text-align: center;
+      color: white;
+      background-color: #2AC3FF;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card1button{
+      background-color: white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card1button:hover{
+      background-color:#2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 280px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card2button{
+      background-color: #2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card2button:hover{
+      background-color:white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }    
+    #rating{
+      width: 500px;
+    }
+    #win{
+      display: none;
+      background-color: #2AC3FF;
+      margin: 5px;
+      padding: 10px;
+      border: solid 2px white;
+      border-radius: 10px;
+      position: fixed;
+      right:    0;
+      bottom:   0;
+      color: white;
+    }
+    
+    #open{
+      color: #2AC3FF;
+      width: 200px;
+      opacity: 0.6;
+      height: 30px;
+      border: solid 2px #2AC3FF;
+      background-color: white;
+      border-radius: 50px;
+      margin-right: 30px;
+      position: fixed;
+      right:    0;
+      bottom:   0;
+      margin-bottom: 20px;
+    }
+    #open:hover{
+      opacity: 1;
+    }
+</style>
+</head>
+  <body>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    pic = document.getElementById('nvpic');
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        nvpic.style.display = "block";
+      } else {
+        nvpic.style.display = "none";
+      }
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("topper").style["boxShadow"] = "2px 2px 50px black"
+      } else {
+        document.getElementById("topper").style["boxShadow"] = "0px 0px 0px black"
+      }
+    }
+    
+    async function subm(){
+      var n = document.getElementById('name').value;
+      var r = document.getElementById('rating').value;
+      document.getElementById('out').innerHTML = "response recorded!";
+      await fetch("https://docs.google.com/forms/d/e/1FAIpQLScuYhQEObPyRPIyg62HuysAI-R0nGmriaEsHWcNIia4z-EYfg/formResponse?usp=pp_url&entry.1647070813=" + n + "&entry.26723622=" + r); 
+    }
+    </script>
+    <header>
+      <ul id="topper">
+        <li style="float: left;" ><img src="CODERUNNER.png" id='nvpic'></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="home" onclick="location.href='index.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="code" onclick="location.href='codes.html'"></li>
+      </ul>
+    </header>
+    <div>
+      <img src="CODERUNNER.png" id="mainpic">
+    </div>
+    <div class="card1">
+      <h1>COUNTDOWN PROJECT</h1>
+      <h2>A simple javascript program to count backwards in DD/MM/SS format till Jun 19,2022 10:14:00</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button onclick="location.href='countdown.html'" id="card1button"><b>COUNTDOWN PROJECT</b></button>
+    </div>
+    <div class="card2">
+      <h1>VOTING AGE CHECKER</h1>
+      <h2>A simple javascript program to check wheather you can vote or not and see if not then how much time is left for you to start voting.</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card2button" onclick="location.href='votingAge.html'"><b>VOTING AGE PROJECT</b></button>
+    </div>
+    <div class="card1">
+      <h1>CALCULATOR PROJECT</h1>
+      <h2>A simple javascript program to calculate the sum, difference, quetiont or product</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card1button" onclick="location.href='calculator.html'"><b>CALCULATOR PROJECT</b></button> 
+    </div>
+    <div class="card2">
+      <h1>PRIME NUMBER CHECKER</h1>
+      <h2>A simple javascript program to check wheather a number is prime or not.</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card2button" onclick="location.href='primeNo.html'"><b>PRIME NUMBER CHECKER</b></button>
+    </div>
+    <div class="card1">
+      <h1>MAD LIBS GAME</h1>
+      <h2>A simple javascript program to give a noun, name and an adjective and get a sentence.</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card1button" onclick="location.href='madlibs.html'"><b>MAD LIBS GAME</b></button>
+    </div>
+    <div class="card2">
+      <h1>PROMPT QUIZ </h1>
+      <h2>A simple javascript program to quiz you using prompts.</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card2button" onclick="location.href='quiz.html'"><b>PROMPT QUIZ</b></button>
+    </div>
+    <div class="card1">
+      <h1>VOWEL COUNTER</h1>
+      <h2>A simple javascript program to give the number of vowels in a sentence.</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card1button" onclick="location.href='vowelCount.html'"><b>VOWEL COUNT</b></button>
+    </div>
+    <div class="card2">
+      <h1>FIBONACCI NUMBER</h1>
+      <h2>A simple javascript program to tell you the ith number in the fibbonacci sequence.</h2>
+      <h2>SEE THE PROJECT OUT HEAR</h2>
+      <button id="card2button" onclick="location.href='fibo.html'"><b>FIBONACCI NUMBERS</b></button>
+    </div>
+      <div id="win">
+      <input type="button" value="X" onclick="document.getElementById('win').style.display = 'none'; document.getElementById('open').style.display = 'block';" style="float: right;">
+      <H3>PLEASE ENTER YOUR NAME: </H3>
+      <input type="text" placeholder="enter your name" id="name">
+      <H3>PLEASE ENTER YOUR rating on the scale of 1 to 5: </H3>
+      <datalist id="labels">
+        <option value="1" label="poor"></option>
+        <option value="2"></option>
+        <option value="3" label="ok"></option>
+        <option value="4"></option>
+        <option value="5" label="superb"></option>
+      </datalist>
+      <input type="range" min="1" max="5" id="rating" list="labels">
+      <br>
+      <br>
+      <input type="button" value="submit" onclick="subm()">
+      <h4 id="out"></h4>
+    </div>
+        <input type="button" value="GIVE FEEDBACK" id="open" onclick="document.getElementById('win').style.display = 'block'; document.getElementById('open').style.display = 'none';">
+  </body>
+</html>

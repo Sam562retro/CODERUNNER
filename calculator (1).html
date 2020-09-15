@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CODE RUNNER</title>
+    <link rel="icon" href="CODERUNNER.png" type="image/x-icon">
+    <style>
+    *{
+        outline: none;
+    }
+    #mainpic{
+      padding: 150px;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background: grey; 
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: darkgray; 
+    }
+    body{
+      margin: 0;
+      background-color: white;
+      text-align: center;
+    }
+    #nvpic{
+      width: 130px;
+      height: 70px;
+      margin: 0;
+      padding: 10px;
+    }
+    ul{
+      list-style-type: none;
+      height: 90px; 
+      width: 98%;
+      position: fixed;
+      background-color: white;
+      top: 0;
+      overflow: hidden;
+      box-shadow: 2px 2px 50px black;
+      margin: 0;
+    }
+    .nvbar{
+      background-color: #2AC3FF;
+      color: white;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      top: 0;
+      margin: 15px;
+    }
+    .nvbar:hover{
+      background-color: white;
+      color: #2AC3FF;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .card1{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 100px;
+      border-radius: 10px;
+      height: 900px;
+      text-align: center;
+      color: white;
+      background-color: #2AC3FF;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card1button{
+      background-color: white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card1button:hover{
+      background-color:#2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 280px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card2button{
+      background-color: #2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card2button:hover{
+      background-color:white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2_code{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 400px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    table{
+      border: solid 2px #2AC3FF;
+      border-radius: 20px;
+      width: 400px;
+    }
+    td{
+      border: solid 2px #2AC3FF;
+      border-radius: 20px;
+    }
+    input{
+      border: solid 2px #2AC3FF;
+      border-radius: 20px;
+      width: 100px;
+    }
+    .box{
+      width: 416px;
+    }
+    .gap{
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 20px;
+      width: 435px;
+      margin-left: 350px;
+      margin-top: 50px;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+      <ul>
+        <li style="float: left;" ><img src="CODERUNNER.png" id='nvpic'></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="home" onclick="location.href='index.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="code" onclick="location.href='codes.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="go back" onclick="location.href='projects.html'"></li>
+      </ul>
+    </header>
+  <script>
+      function display(val){
+        document.getElementById('screen').value+=val;
+      }
+
+      function solve(){
+        var x = document.getElementById('screen').value;
+        var y = eval(x);
+        document.getElementById('screen').value = y;
+      }
+      function clr(){
+        document.getElementById('screen').value = " ";
+      }
+
+    </script>
+    <div class="card1">
+      <div class="card2">
+        <div class="gap">
+			<table>
+				<tr>
+					<td><input type="textbox" placeholder="calculation" id="screen" class="box"></td>
+        </tr>
+			</table>
+      <table id="button">
+        <tr>
+          <td><input type="button" value="(" onclick="display('(')" class="button"></td>
+          <td><input type="button" value=")" onclick="display(')')" class="button"></td>
+          <td><input type="button" value="%" onclick="display('%')" class="button"></td>
+          <td><input type="button" value="AC" onclick="clr()" class="button"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="display('7')" class="button"></td>
+          <td><input type="button" value="8" onclick="display('8')" class="button"></td>
+          <td><input type="button" value="9" onclick="display('9')" class="button"></td>
+          <td><input type="button" value="/" onclick="display('/')" class="button"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="display('4')" class="button"></td>
+          <td><input type="button" value="5" onclick="display('5')" class="button"></td>
+          <td><input type="button" value="6" onclick="display('6')" class="button"></td>
+          <td><input type="button" value="x" onclick="display('*')" class="button"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="1" onclick="display('1')" class="button"></td>
+          <td><input type="button" value="2" onclick="display('2')" class="button"></td>
+          <td><input type="button" value="3" onclick="display('3')" class="button"></td>
+          <td><input type="button" value="-" onclick="display('-')" class="button"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="0" onclick="display('0')" class="button"></td>
+          <td><input type="button" value="." onclick="display('.')" class="button"></td>
+          <td><input type="button" value="=" onclick="solve()" class="button" id="equal"></td>
+          <td><input type="button" value="+" onclick="display('+')" class="button"></td>
+        </tr>
+      </table>
+      </div>
+      </div>
+      <div class="card2_code">
+        <h1 class="center">THE CODE</h1>
+          <iframe height="265" style="width: 100%;" scrolling="no" title="CALCULATOR" src="https://codepen.io/gsoham562/embed/wvMpWBz?height=265&theme-id=dark&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+          See the Pen <a href='https://codepen.io/gsoham562/pen/wvMpWBz'>CALCULATOR</a> by SOHAM GUPTA
+          (<a href='https://codepen.io/gsoham562'>@gsoham562</a>) on <a href='https://codepen.io'>CodePen</a>.
+        </iframe>
+      </div>
+    </div>
+  </body>

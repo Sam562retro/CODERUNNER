@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CODE RUNNER</title>
+    <link rel="icon" href="CODERUNNER.png" type="image/x-icon">
+    <style>
+    *{
+        outline: none;
+    }
+    #mainpic{
+      padding: 150px;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background: grey; 
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: darkgray; 
+    }
+    body{
+      margin: 0;
+      background-color: white;
+      text-align: center;
+    }
+    #nvpic{
+      width: 130px;
+      height: 70px;
+      margin: 0;
+      padding: 10px;
+    }
+    ul{
+      list-style-type: none;
+      height: 90px; 
+      box-shadow: 2px 2px 50px black;
+      width: 98%;
+      position: fixed;
+      background-color: white;
+      top: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+    .nvbar{
+      background-color: #2AC3FF;
+      color: white;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      top: 0;
+      margin: 15px;
+    }
+    .nvbar:hover{
+      background-color: white;
+      color: #2AC3FF;
+      width: 150px;
+      height: 50px;
+      border: solid 2px;
+      border-color: #2AC3FF;
+      border-radius: 10px;
+      font-size:  15px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .card1{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 100px;
+      border-radius: 10px;
+      height: 900px;
+      text-align: center;
+      color: white;
+      background-color: #2AC3FF;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card1button{
+      background-color: white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card1button:hover{
+      background-color:#2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 280px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #card2button{
+      background-color: #2AC3FF;
+      color: white;
+      text-align: center;
+      border: solid 2px white;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+    }
+    #card2button:hover{
+      background-color:white;
+      color: #2AC3FF;
+      text-align: center;
+      border: solid 2px #2AC3FF;
+      border-radius: 10px;
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .card2_code{
+      border: solid 4px #2AC3FF;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 10px;
+      height: 400px;
+      text-align: center;
+      color: #2AC3FF;
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .box{
+      background-color: #2AC3FF;
+      color: white;
+      font-family: Arial;
+      width: 200px;
+      height: 40px;
+      border-radius: 500px;
+      border: solid 2px #2AC3FF;
+      cursor: text;
+    }
+    .button{
+      background-color: #2AC3FF;
+      color: white;
+      font-family: Arial;
+      width: 100px;
+      height: 40px;
+      border-radius: 500px;
+      border: solid 2px #2AC3FF;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+      <ul>
+        <li style="float: left;" ><img src="CODERUNNER.png" id='nvpic'></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="home" onclick="location.href='index.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="code" onclick="location.href='codes.html'"></li>
+        <li style="float: right;" ><input type="button" class="nvbar" value="go back" onclick="location.href='projects.html'"></li>
+      </ul>
+    </header>
+    <script>
+        function generate() {
+          var snoun = document.getElementById("noun").value;
+          var adj = document.getElementById("adjective").value;
+          var mane = document.getElementById("name").value;
+          document.getElementById(
+            "story"
+          ).innerHTML = `Did you know that you are ${mane} and you have a ${adj} ${snoun}`;
+        }
+    </script>
+    <div class="card1">
+      <div class="card2">
+        <h1>MAD LIBS GAME!</h1>
+       <h2>PLEASE ENTER THE FOLLOWING DATA</h2>
+       <input type="text" placeholder="enter a noun" id="noun" class="box">
+       <input type="text" placeholder="enter a adjective" id="adjective" class="box">
+       <input type="text" placeholder="enter a name" id="name" class="box">
+       <br>
+       <input type="button" value="LIB IT!" onclick="generate()" class="button">
+       <p id="story"></p>
+      </div>
+      <div class="card2_code">
+        <h1 class="center">THE CODE</h1>
+          <iframe height="265" style="width: 100%;" scrolling="no" title="MAD LIBS GAME " src="https://codepen.io/gsoham562/embed/bGEaeeg?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+          See the Pen <a href='https://codepen.io/gsoham562/pen/bGEaeeg'>MAD LIBS GAME </a> by SOHAM GUPTA
+          (<a href='https://codepen.io/gsoham562'>@gsoham562</a>) on <a href='https://codepen.io'>CodePen</a>.
+        </iframe>        
+      </div>
+    </div>
+  </body>
+</html>
